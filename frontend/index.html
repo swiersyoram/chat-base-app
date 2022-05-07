@@ -1,8 +1,8 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>DevOpsChatApp</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
@@ -10,20 +10,20 @@
 
     <p>Welkom bij de DevOps chat app!</p>
     <button id="toChatApp">Ga naar de chat app</button>
-    
+
     <script>
       $(document).ready(() => {
-        $('#toChatApp').click(() => {
+        $("#toChatApp").click(() => {
           $.ajax({
-            type: 'GET',
-            url: '/auth/login-url',
-            contentType: 'application/json',
+            type: "GET",
+            url: "/auth/login-url",
+            contentType: "application/json",
             success: (data) => {
-              window.location.href = data; 
+              window.location.href = data;
             },
-          })
+          });
           //window.location.href = '/chatroom.html';
-        })
+        });
 
         // $.ajax({
         //   type: 'GET',
@@ -37,9 +37,7 @@
         //     }
         //   }
         // })
-
-        
-      }) 
+      });
     </script>
   </body>
 </html>

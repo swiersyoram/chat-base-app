@@ -1,0 +1,15 @@
+version: "3"
+services:
+  reverse-proxy:
+    build: .
+
+    ports:
+      - 8000:80
+    depends_on:
+      - auth
+      - chat
+  auth:
+    build: ./authAPI
+
+  chat:
+    build: ./chatAPI
