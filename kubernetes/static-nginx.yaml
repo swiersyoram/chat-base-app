@@ -12,13 +12,13 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        imagePullPolicy: IfNotPresent
-        image: nginx-static:latest
-        ports:
-          - containerPort: 80
-            name: http-web-svc
-        
+        - name: nginx
+          imagePullPolicy: Never
+          image: nginx-static:latest
+          ports:
+            - containerPort: 80
+              name: http-web-svc
+
 ---
 apiVersion: v1
 kind: Service
@@ -28,7 +28,7 @@ spec:
   selector:
     app: nginx
   ports:
-  - name: static
-    protocol: TCP
-    port: 80
-    targetPort: http-web-svc
+    - name: static
+      protocol: TCP
+      port: 80
+      targetPort: http-web-svc
